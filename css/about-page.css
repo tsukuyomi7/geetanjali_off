@@ -1,0 +1,121 @@
+.about-intro {
+  overflow: hidden; /* To contain floats */
+}
+.about-figure {
+  max-width: 300px; /* Adjust as needed */
+  margin-bottom: 1.5rem;
+}
+.about-figure.align-right {
+  float: right;
+  margin-left: 1.5rem;
+}
+.about-figure.align-left {
+  float: left;
+  margin-right: 1.5rem;
+}
+.about-figure img {
+  border-radius: 8px;
+}
+.about-figure figcaption {
+  font-size: 0.85em;
+  color: #777;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.row-flex-spaced {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between columns */
+}
+.col-flex-md-6 {
+  flex: 1;
+  min-width: 300px; /* Ensure readability on smaller flex views */
+}
+.col-flex-md-6 h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.8em;
+}
+.icon-left {
+  margin-right: 10px;
+  color: var(--accent-gold);
+}
+
+.styled-list {
+  list-style: none;
+  padding-left: 0;
+}
+.styled-list li {
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 0.8em;
+  font-size: 1.05em;
+}
+.styled-list.tick-list li::before {
+  content: "\f00c"; /* FontAwesome check icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--accent-gold);
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+#team-section .lead-text {
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.team-grid-about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+.team-member-card {
+  background-color: #fff; /* If on alt-background */
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+.team-member-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  border: 3px solid var(--accent-gold);
+}
+.team-member-card h3 {
+  margin-bottom: 0.25em;
+  font-size: 1.25em;
+  color: var(--primary-color);
+}
+.team-member-position {
+  font-weight: bold;
+  color: var(--accent-gold);
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+.team-member-bio-short {
+  font-size: 0.85em;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive adjustments for about page if needed */
+@media (max-width: 768px) {
+  .about-figure.align-right,
+  .about-figure.align-left {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+  }
+}

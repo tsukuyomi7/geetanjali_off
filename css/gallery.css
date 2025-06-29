@@ -1,0 +1,534 @@
+/* geetanjali_website/css/style.css (or gallery.css) */
+
+:root {
+  /* Ensure these variables are defined in your main stylesheet or here */
+  --primary-color: #0a2342;
+  --secondary-color: #1c4a7e;
+  --accent-gold: #c9a46b;
+  --accent-gold-darker: #b08f5a;
+  --text-light: #f8f9fa;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --dashboard-bg: #f4f7fc;
+  --card-bg: #ffffff;
+  --std-dash-border-color: #dce1e7;
+  --std-dash-shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.06);
+  --std-dash-shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --success-color: #198754;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-grey: #f1f3f5;
+  --input-bg-color: #fdfdff;
+  --input-border-color: #ced4da;
+  --input-focus-border-color: var(--accent-gold);
+  --input-focus-shadow-color: rgba(201, 164, 107, 0.25);
+}
+
+.gallery-page-container {
+  background-color: var(--dashboard-bg);
+  padding-bottom: 3rem;
+  min-height: 100vh;
+}
+
+.gallery-header-section.page-title-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  color: var(--text-light);
+  padding: 4rem 1rem 3.5rem 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem; /* Reduced margin before filter toggle */
+  border-radius: 0;
+  box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+.gallery-header-section h1 {
+  color: var(--text-light);
+  font-size: 3em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.gallery-header-section h1 i {
+  margin-right: 18px;
+  color: var(--accent-gold);
+}
+.gallery-header-section .subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.25em;
+  max-width: 750px;
+  margin: 0.75rem auto 0 auto;
+  line-height: 1.5;
+}
+.gallery-admin-actions .cta-button.btn-lg.btn-success {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold-darker);
+  color: var(--primary-color);
+  padding: 0.8rem 1.8rem;
+  font-size: 1.05em;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.gallery-admin-actions .cta-button.btn-lg.btn-success:hover {
+  background-color: var(--accent-gold-darker);
+  color: var(--primary-color);
+}
+
+/* Filter Toggle Area */
+.gallery-filter-toggle-area {
+  margin-bottom: 1.5rem; /* Space between toggle and filter panel/gallery */
+}
+#toggleGalleryFilters {
+  background-color: var(--card-bg);
+  color: var(--primary-color);
+  border: 1px solid var(--std-dash-border-color);
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  box-shadow: var(--std-dash-shadow-sm);
+}
+#toggleGalleryFilters:hover {
+  background-color: var(--light-grey);
+  border-color: #ccc;
+}
+#toggleGalleryFilters .toggle-arrow {
+  transition: transform 0.3s ease-in-out;
+  display: inline-block; /* Needed for transform */
+  margin-left: 8px;
+}
+#toggleGalleryFilters[aria-expanded="true"] .toggle-arrow {
+  transform: rotate(180deg);
+}
+
+/* Filter Controls Area */
+.gallery-controls-area {
+  padding: 25px 30px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--std-dash-shadow-md);
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--std-dash-border-color);
+  /* Styles for initial hidden state handled by JS/inline style */
+  max-height: 1000px; /* Large enough for content */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding-top 0.5s ease-in-out,
+    padding-bottom 0.5s ease-in-out, border-width 0.5s ease-in-out,
+    margin-bottom 0.5s ease-in-out;
+}
+.gallery-controls-area:not(.open) {
+  /* Initial hidden state if JS adds .open */
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-width: 0;
+  margin-bottom: 0;
+  /* opacity: 0; // Can be added for fade effect */
+}
+
+.form-filters-gallery .filters-header {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--std-dash-border-color);
+}
+.form-filters-gallery .filters-title {
+  font-family: var(--heading-font);
+  font-size: 1.5em;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.form-filters-gallery .filters-title i {
+  margin-right: 12px;
+  color: var(--accent-gold);
+}
+
+.form-filters-gallery .filter-grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(230px, 1fr)
+  ); /* Adjusted minmax */
+  gap: 20px 25px;
+  align-items: flex-end;
+}
+.form-filters-gallery .form-group.filter-item {
+  margin-bottom: 0;
+}
+.form-filters-gallery .form-group label {
+  font-weight: 500;
+  font-size: 0.9em;
+  margin-bottom: 0.6rem;
+  color: var(--text-dark);
+  display: block;
+}
+.form-filters-gallery .form-group label i {
+  margin-right: 8px;
+  color: var(--text-muted);
+  width: 16px;
+  text-align: center;
+}
+
+.form-filters-gallery .form-control {
+  font-size: 0.95em;
+  padding: 0.75rem 1rem; /* Adjusted padding */
+  border-radius: 6px;
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-bg-color);
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  line-height: 1.5;
+}
+.form-filters-gallery .form-control:focus {
+  border-color: var(--input-focus-border-color);
+  box-shadow: 0 0 0 0.2rem var(--input-focus-shadow-color);
+  background-color: #fff;
+  outline: none;
+}
+.form-filters-gallery .filter-actions-gallery-item {
+  grid-column: 1 / -1; /* Make button container span full width on its row */
+}
+@media (min-width: 768px) {
+  /* For wider screens, actions can be inline */
+  .form-filters-gallery .filter-actions-gallery-item {
+    grid-column: auto; /* Reset span */
+    display: flex;
+    align-items: flex-end; /* Align with bottom of other inputs */
+  }
+  .form-filters-gallery .filter-actions-gallery-item .filter-actions-gallery {
+    width: 100%; /* Make inner div take full width of grid item */
+  }
+}
+
+.filter-actions-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+  margin-top: 1rem; /* Reduced from 1.5rem as label provides space */
+  /* padding-top: 1.5rem; -- Removed, header has padding */
+  /* border-top: 1px solid var(--std-dash-border-color); -- Removed, header has border */
+}
+.filter-actions-gallery .cta-button {
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95em;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  flex-grow: 1; /* Allow buttons to grow */
+}
+@media (min-width: 576px) {
+  .filter-actions-gallery .cta-button {
+    flex-grow: 0; /* Don't grow on larger screens */
+  }
+}
+.filter-actions-gallery .btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+}
+.filter-actions-gallery .btn-primary:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.filter-actions-gallery .btn-secondary {
+  background-color: var(--text-muted);
+  color: var(--text-light);
+  border: none;
+}
+.filter-actions-gallery .btn-secondary:hover {
+  background-color: #5a6268;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-results-info {
+  text-align: center;
+  margin-bottom: 2rem; /* Increased space */
+  font-size: 0.95em;
+  color: var(--text-muted);
+  padding: 12px 15px; /* More padding */
+  background-color: var(--light-grey);
+  border-radius: 6px;
+  border: 1px solid var(--std-dash-border-color);
+}
+.gallery-results-info i {
+  margin-right: 5px;
+}
+
+/* Main Gallery Grid - (Existing styles from previous turn are good, minor tweaks) */
+.gallery-grid-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item-main {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--std-dash-shadow-md);
+  background-color: var(--light-grey);
+  transition: transform 0.3s ease, box-shadow 0.35s ease;
+  aspect-ratio: 4 / 3;
+}
+.gallery-item-main:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+.gallery-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.gallery-thumbnail-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease,
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 12px;
+}
+.gallery-item-main:hover .gallery-thumbnail-main {
+  transform: scale(1.1);
+}
+.gallery-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  border-radius: 12px;
+}
+.gallery-item-main:hover .gallery-item-overlay {
+  opacity: 1;
+}
+.gallery-item-overlay .overlay-icon-wrapper {
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s,
+    opacity 0.3s ease-out 0.1s;
+}
+.gallery-item-main:hover .overlay-icon-wrapper {
+  transform: scale(1);
+  opacity: 1;
+}
+.gallery-item-overlay .overlay-icon {
+  font-size: 2.8em;
+  opacity: 0.9;
+}
+.gallery-item-overlay .overlay-caption {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 5px;
+  line-height: 1.35;
+  max-height: 4.05em;
+  overflow: hidden;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+.gallery-item-overlay .overlay-meta {
+  font-size: 0.8em;
+  opacity: 0.8;
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+.gallery-item-overlay .overlay-date i,
+.gallery-item-overlay .overlay-stats small i {
+  margin-right: 4px;
+}
+.overlay-stats .like-count {
+  cursor: default;
+} /* Make like count not look clickable unless it is */
+
+.gallery-item-actions-public {
+  /* For like button */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 5; /* Above overlay text but below admin actions */
+}
+.btn-like-gallery-item {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-light);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-like-gallery-item:hover {
+  background-color: var(--accent-gold);
+  color: var(--primary-color);
+}
+.btn-like-gallery-item i {
+  margin-right: 5px;
+}
+.btn-like-gallery-item.liked i {
+  font-weight: 900;
+  color: var(--danger-color);
+} /* Solid heart when liked */
+
+.gallery-item-admin-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(10, 35, 66, 0.8);
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: flex;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10;
+  transform: translateY(-10px);
+}
+.gallery-item-main:hover .gallery-item-admin-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+.btn-edit-gallery-item,
+.btn-delete-gallery-item {
+  color: var(--accent-gold);
+  font-size: 1em;
+  text-decoration: none;
+  padding: 3px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.btn-edit-gallery-item:hover {
+  color: #fff3cd;
+  transform: scale(1.15);
+}
+.btn-delete-gallery-item:hover {
+  color: var(--danger-color);
+  transform: scale(1.15);
+}
+
+/* Pagination & Load More (Enhanced) */
+.pagination-container,
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+.pagination-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+.pagination-list .page-item .page-link {
+  display: block;
+  padding: 10px 16px;
+  color: var(--primary-color);
+  border: 1px solid var(--std-dash-border-color);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  background-color: var(--card-bg);
+  font-weight: 500;
+  min-width: 40px;
+  text-align: center;
+}
+.pagination-list .page-item.active .page-link {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(10, 35, 66, 0.2);
+}
+.pagination-list .page-item.disabled .page-link {
+  color: #b0b0b0;
+  background-color: #f0f0f0;
+  border-color: #e0e0e0;
+  cursor: default;
+}
+.pagination-list
+  .page-link:hover:not(.page-item.active .page-link):not(
+    .page-item.disabled .page-link
+  ) {
+  background-color: var(--accent-gold);
+  color: var(--primary-color);
+  border-color: var(--accent-gold-darker);
+  box-shadow: 0 3px 8px rgba(201, 164, 107, 0.2);
+}
+.pagination-list .page-link i {
+  font-size: 0.85em;
+}
+
+.load-more-container .cta-button {
+  padding: 0.9rem 2.2rem; /* Larger load more button */
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.load-more-container .cta-button.btn-primary-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.load-more-container .cta-button.btn-primary-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  box-shadow: 0 3px 10px rgba(10, 35, 66, 0.2);
+}
+.end-of-gallery-message {
+  font-style: italic;
+  padding: 1rem;
+  background-color: var(--light-grey);
+  border-radius: 6px;
+}
+.end-of-gallery-message i {
+  margin-right: 5px;
+  color: var(--success-color);
+}
+
+.no-results-message {
+  padding: 4rem 1rem;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--std-dash-shadow-sm);
+  border: 1px dashed var(--std-dash-border-color);
+}
+.no-results-message i.fa-4x {
+  font-size: 4.5em;
+  display: block;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.no-results-message h3 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.8em;
+}
+.no-results-message p {
+  color: var(--text-muted);
+  font-size: 1.1em;
+  line-height: 1.65;
+  max-width: 500px;
+  margin: 0 auto 1.5rem auto;
+}
+.no-results-message .cta-button.btn-primary {
+  margin-top: 1.5rem;
+}

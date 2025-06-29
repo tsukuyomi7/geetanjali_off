@@ -1,0 +1,1319 @@
+.header-actions-bar {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* Or flex-end */
+}
+.header-actions-bar .btn-success {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+  color: var(--text-light);
+}
+.header-actions-bar .btn-success:hover {
+  background-color: #157347; /* Darker green */
+  border-color: #146c43;
+}
+
+.admin-page-message .form-message {
+  /* For messages at the top of the page */
+  margin-bottom: 1.5rem;
+}
+
+.filters-and-search-section.card-style-admin,
+.std-profile-main-content.card-style-admin {
+  /* Common card styling for sections */
+  background-color: var(--card-bg, #fff);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: var(--std-dash-shadow-md, 0 5px 15px rgba(0, 0, 0, 0.08));
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--std-dash-border-color, #e0e0e0);
+}
+
+.section-title-minor {
+  font-family: var(--heading-font);
+  font-size: 1.5em;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-gold);
+  display: inline-block;
+}
+.section-title-minor i {
+  margin-right: 10px;
+}
+
+.form-filters-search .filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+.form-filters-search .form-group label {
+  font-weight: 500;
+  font-size: 0.9em;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+}
+.form-filters-search .form-control {
+  /* Assuming base .form-control styles */
+  padding: 0.6rem 0.75rem; /* Slightly smaller padding for filter inputs */
+  font-size: 0.95em;
+}
+.input-group-admin {
+  position: relative;
+}
+.input-group-admin .input-group-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none; /* So it doesn't interfere with input click */
+}
+.input-group-admin input.form-control {
+  padding-left: 35px; /* Space for the icon */
+}
+.filter-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start; /* Or flex-end */
+  margin-top: 1rem;
+}
+.filter-actions .cta-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9em;
+}
+.filter-actions .cta-button.btn-primary {
+  /* Assuming base cta-button styles */
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+.filter-actions .cta-button.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+.filter-actions .cta-button.btn-secondary {
+  background-color: var(--text-muted);
+  color: var(--text-light);
+}
+.filter-actions .cta-button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.table-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.table-header-controls .record-count {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.admin-table.stylish-table {
+  /* More specific class for this table */
+  border: 1px solid var(--std-dash-border-color);
+  border-radius: 8px; /* Rounded corners for the table wrapper/itself */
+  overflow: hidden; /* If using border-radius on table directly */
+}
+.admin-table.stylish-table th {
+  background-color: var(--primary-color); /* Darker header */
+  color: var(--text-light);
+  padding: 12px 15px; /* More padding */
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+.admin-table.stylish-table td {
+  padding: 12px 15px; /* Consistent padding */
+  vertical-align: middle;
+  border-bottom: 1px solid var(--std-dash-border-color);
+  font-size: 0.95em;
+}
+.admin-table.stylish-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.admin-table.stylish-table tbody tr:hover {
+  background-color: var(--light-grey); /* Subtle hover */
+}
+
+.user-name-cell .user-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Increased gap */
+}
+.user-name-wrapper span {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+.verified-badge-icon {
+  width: 14px; /* Slightly larger for better visibility */
+  height: 14px;
+  flex-shrink: 0;
+}
+.admin-table.stylish-table td a {
+  /* Make email links less prominent by default */
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.admin-table.stylish-table td a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+.role-badge {
+  /* Styles from super_admin_css should apply */
+  /* padding: 4px 10px; border-radius: 12px; font-size: 0.8em; ... */
+}
+.account-status-badge {
+  /* Styles from previous turn should apply */
+  /* padding: 4px 10px; border-radius: 12px; font-size: 0.8em; ... */
+}
+.account-status-badge i {
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+
+/* Quick Role Change Form */
+.quick-role-update-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.quick-role-update-form .form-control-sm {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9em;
+  border-radius: 4px;
+  min-width: 130px; /* Give select some width */
+  border: 1px solid #ced4da;
+}
+.quick-role-update-form .btn-xs {
+  /* For very small buttons */
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+.btn-action-primary {
+  /* Specific class for action buttons */
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+.btn-action-primary:hover {
+  background-color: var(--secondary-color);
+}
+.btn-action-info {
+  background-color: var(--info-color);
+  color: var(--text-dark);
+  border: none;
+}
+.btn-action-info:hover {
+  background-color: #0a9cb5; /* Darker info */
+}
+.actions-cell .btn {
+  /* Ensure buttons in actions cell are spaced */
+  margin-right: 5px;
+}
+.actions-cell .btn:last-child {
+  margin-right: 0;
+}
+.actions-cell .btn i {
+  margin-right: 4px;
+}
+
+.text-muted.small-text {
+  font-size: 0.85em;
+}
+
+.no-results-row td {
+  padding: 2rem 1rem !important; /* More padding for emphasis */
+  font-style: italic;
+  color: var(--text-muted);
+}
+.no-results-row a {
+  font-weight: 500;
+}
+
+/* Add New User Section (informational block) */
+.content-section.alt-background {
+  /* From student dashboard, good for this */
+  background-color: var(--background-offwhite, #fdfbf5);
+  padding: 2rem;
+  border-radius: 8px;
+}
+.content-section.alt-background .section-title {
+  /* Use section-title-minor if preferred */
+}
+.content-section.alt-background p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.admin-settings-form fieldset {
+  border: 1px solid var(--std-dash-border-color, #dee2e6);
+  padding: 20px 25px 25px 25px;
+  border-radius: 8px;
+  margin-bottom: 2.5rem;
+  background-color: var(--card-bg); /* Light background for fieldsets */
+}
+.admin-settings-form legend {
+  font-family: var(--heading-font);
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding: 0 10px;
+  width: auto;
+  margin-bottom: 1rem; /* Space below legend */
+}
+.admin-settings-form legend i {
+  margin-right: 8px;
+  color: var(--accent-gold);
+}
+.admin-settings-form .form-group {
+  margin-bottom: 1.5rem;
+}
+.admin-settings-form .form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.admin-settings-form .form-control {
+  /* Assuming you have base .form-control styles */
+  /* Ensure they are full width or as desired */
+}
+.admin-settings-form .form-text.text-muted {
+  font-size: 0.85em;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+/* Toggle Switch CSS */
+.form-check-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Puts label on left, switch on right */
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee;
+}
+.form-check-toggle:last-of-type {
+  border-bottom: none;
+}
+.form-check-toggle label:first-child {
+  /* The text label */
+  margin-bottom: 0; /* Override default form-group label margin */
+  font-weight: 500;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px; /* Width of the switch */
+  height: 28px; /* Height of the switch */
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; /* Height of the knob */
+  width: 20px; /* Width of the knob */
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: var(--success-color, #2196f3); /* Use your success color */
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--success-color, #2196f3);
+}
+input:checked + .slider:before {
+  transform: translateX(22px); /* Distance knob moves */
+}
+.slider.round {
+  border-radius: 28px; /* Fully rounded switch */
+}
+.slider.round:before {
+  border-radius: 50%; /* Round knob */
+}
+.form-actions {
+  margin-top: 2rem;
+  text-align: right; /* Or center */
+}
+.form-actions .cta-button {
+  padding: 12px 30px;
+}
+.cta-button.btn-info {
+  /* For clear cache button */
+  background-color: var(--info-color);
+  color: #000;
+  border-color: var(--info-color);
+}
+.cta-button.btn-info:hover {
+  background-color: #0a9cb5;
+  border-color: #0a9cb5;
+}
+
+/* General Admin Page Styles (Ensure these are consistent with other admin pages) */
+.admin-area {
+  padding-bottom: 3rem;
+}
+.std-profile-container .container {
+  max-width: 1300px; /* Wider for tables */
+} /* Override if needed */
+
+.admin-area .page-title-section {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0 0 10px 10px;
+}
+.admin-area .page-title-section h1 {
+  color: var(--text-light);
+  font-size: 2.2em;
+}
+.admin-area .page-title-section .subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1em;
+}
+.admin-area .page-title-section h1 i {
+  margin-right: 12px;
+  color: var(--accent-gold);
+}
+
+.header-actions-bar {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 12px;
+  justify-content: center; /* Or flex-start/flex-end */
+}
+.header-actions-bar .btn-sm {
+  font-size: 0.9em;
+  padding: 0.5rem 1rem;
+}
+
+.admin-page-message .form-message {
+  margin-bottom: 1.5rem;
+}
+
+.card-style-admin {
+  /* Common card styling for sections */
+  background-color: var(--card-bg, #fff);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: var(--std-dash-shadow-md, 0 5px 15px rgba(0, 0, 0, 0.08));
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--std-dash-border-color, #e0e0e0);
+}
+
+.section-title-minor {
+  font-family: var(--heading-font);
+  font-size: 1.5em;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-gold);
+  display: inline-block;
+}
+.section-title-minor i {
+  margin-right: 10px;
+}
+
+/* Filter & Search Section */
+.filters-and-search-section .filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+.filters-and-search-section .form-group label {
+  font-weight: 500;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  display: block;
+}
+.filters-and-search-section .form-control {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95em;
+  border-radius: 5px;
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-bg-color);
+}
+.filters-and-search-section .form-control:focus {
+  border-color: var(--input-focus-border-color);
+  box-shadow: 0 0 0 0.2rem var(--input-focus-shadow-color);
+  background-color: #fff;
+  outline: none;
+}
+.input-group-admin {
+  position: relative;
+}
+.input-group-admin .input-group-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+.input-group-admin input.form-control {
+  padding-left: 38px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--std-dash-border-color);
+}
+.filter-actions .cta-button {
+  padding: 0.7rem 1.4rem;
+  font-size: 0.9em;
+}
+/* Specific button styles from previous CSS should apply */
+
+/* Table Header Controls (Title and Bulk Actions) */
+.table-header-controls {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 15px; /* Space between title and bulk actions if they wrap */
+}
+.table-header-controls .section-title-minor {
+  margin-bottom: 0; /* Remove bottom margin as it's part of flex */
+}
+.table-header-controls .record-count {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-left: 10px; /* Space from title */
+}
+.bulk-actions-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bulk-actions-container .form-control-sm {
+  /* For the select dropdown */
+  padding: 0.4rem 0.7rem;
+  font-size: 0.9em;
+  border-radius: 4px;
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-bg-color);
+  min-width: 150px; /* Give it some width */
+}
+.bulk-actions-container .btn-sm {
+  /* For Apply button */
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9em;
+}
+#applyBulkActionBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* User Table Styling */
+.table-responsive-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--std-dash-border-color);
+  border-radius: 8px;
+  box-shadow: var(--std-dash-shadow-sm);
+}
+.admin-table.stylish-table {
+  width: 100%;
+  border-collapse: separate; /* Allows border-radius on table */
+  border-spacing: 0;
+  font-size: 0.9rem; /* Base font size for table */
+}
+.admin-table.stylish-table th {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  padding: 12px 15px;
+  font-size: 0.85em; /* Slightly smaller header text */
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--primary-color); /* Stronger bottom border for header */
+}
+.admin-table.stylish-table td {
+  padding: 10px 15px; /* Slightly less padding in cells */
+  vertical-align: middle;
+  border-bottom: 1px solid var(--std-dash-border-color);
+  color: var(--text-dark);
+  line-height: 1.5; /* Improved line height for cell content */
+}
+.admin-table.stylish-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.admin-table.stylish-table tbody tr:hover {
+  background-color: var(--light-grey);
+}
+
+/* Table specific cell content */
+.admin-table input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+#selectAllUsersCheckbox {
+  margin-right: 5px;
+}
+
+.user-name-cell .user-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.table-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+  border: 1px solid var(--std-dash-border-color);
+}
+.user-name-wrapper span,
+.user-name-wrapper a {
+  font-weight: 500;
+}
+.verified-badge-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.admin-table.stylish-table td a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.admin-table.stylish-table td a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+.admin-table.stylish-table td a .fa-xs {
+  /* For external link icon */
+  font-size: 0.7em;
+  opacity: 0.7;
+  margin-left: 3px;
+}
+.niftem-id-link {
+  /* For clickable NIFTEM ID if using JS alert version */
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
+.role-badge,
+.account-status-badge {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: #fff;
+  text-transform: capitalize;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
+}
+.role-badge i,
+.account-status-badge i {
+  font-size: 0.9em;
+}
+/* Specific badge colors (from previous CSS, ensure they are complete) */
+.role-student {
+  background-color: #6c757d;
+}
+.role-admin {
+  background-color: #0d6efd;
+}
+.role-super_admin {
+  background-color: var(--danger-color);
+}
+.role-moderator {
+  background-color: var(--warning-color);
+  color: #000;
+}
+.role-blog_editor {
+  background-color: var(--success-color);
+}
+.role-event_manager {
+  background-color: var(--info-color);
+  color: #000;
+}
+
+.status-active {
+  background-color: var(--success-color);
+}
+.status-pending_verification {
+  background-color: var(--warning-color);
+  color: #000;
+}
+.status-blocked {
+  background-color: var(--danger-color);
+}
+.status-deactivated {
+  background-color: var(--text-muted);
+}
+
+.admin-table td small.text-muted,
+.admin-table span.text-muted.small-text {
+  font-size: 0.8em;
+}
+
+/* Quick Actions in Table */
+.actions-cell.quick-actions-cell {
+  white-space: nowrap; /* Prevent actions from wrapping too early */
+  min-width: 220px; /* Ensure enough space for buttons */
+}
+.quick-actions-cell .inline-form {
+  display: inline-block;
+  margin-right: 5px; /* Space between forms/buttons */
+}
+.quick-actions-cell .btn.btn-xs {
+  /* Very small buttons for quick actions */
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8em;
+  line-height: 1.2;
+}
+.quick-actions-cell .btn.btn-xs i {
+  margin-right: 4px;
+}
+.quick-actions-cell .form-control-sm {
+  /* For select in quick actions */
+  padding: 0.3rem 0.5rem;
+  font-size: 0.85em;
+  display: inline-block;
+  width: auto;
+  min-width: 100px;
+  vertical-align: middle;
+}
+.quick-actions-cell .btn-action-info {
+  /* Details button */
+  margin-left: 0 !important; /* Override ml-1 if any */
+}
+
+/* Row highlighting based on status */
+.admin-table tbody tr.user-row-status-blocked {
+  background-color: #fee2e2 !important; /* Lighter red */
+  opacity: 0.8;
+}
+.admin-table tbody tr.user-row-status-blocked:hover {
+  background-color: #fdd7d7 !important;
+}
+.admin-table tbody tr.user-row-status-deactivated {
+  background-color: #e9ecef !important;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+.admin-table tbody tr.user-row-status-deactivated:hover {
+  background-color: #dee2e6 !important;
+}
+.admin-table tbody tr.user-row-status-pending_verification {
+  background-color: #fff9e6 !important; /* Lighter yellow */
+}
+.admin-table tbody tr.user-row-status-pending_verification:hover {
+  background-color: #fff3cd !important;
+}
+
+/* Admin Terminal Modal Styles */
+.admin-terminal-modal {
+  display: none; /* Hidden by default, shown by JS */
+  position: fixed;
+  z-index: 1050; /* High z-index to be on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent body scroll when modal is open */
+  background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.admin-terminal-modal.maximized .admin-terminal-modal-content {
+  width: 95vw !important;
+  height: 90vh !important;
+  max-width: none !important;
+  max-height: none !important;
+  top: 5vh !important;
+  left: 2.5vw !important;
+  transform: none !important;
+  position: fixed !important; /* Override centering */
+}
+
+.admin-terminal-modal-content {
+  position: relative;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  border: 1px solid var(--terminal-border);
+  border-radius: 10px; /* Consistent rounding */
+  width: 80%;
+  max-width: 700px; /* Max width for readability */
+  height: 70vh; /* Good default height */
+  max-height: 500px; /* Max height */
+  min-width: 320px;
+  min-height: 250px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* For resize handle and content */
+  resize: both; /* Allow user resizing for the modal content itself */
+}
+
+/* Terminal itself (inner container if modal content is just a wrapper) */
+#adminTerminal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Important if children overflow */
+}
+
+#adminTerminalToolbar {
+  cursor: grab;
+  padding: 8px 12px;
+  background-color: var(--terminal-toolbar-bg);
+  border-bottom: 1px solid var(--terminal-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  flex-shrink: 0;
+  border-radius: 9px 9px 0 0; /* Match modal content rounding */
+}
+#adminTerminalModalTitle {
+  /* Changed from #adminTerminalName for modal title */
+  color: var(--terminal-toolbar-text);
+  font-size: 0.95em;
+  font-weight: bold;
+}
+#adminTerminalToolbar div {
+  display: flex;
+  gap: 7px;
+}
+.admin-window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  line-height: 1;
+  font-weight: bold;
+  color: #333; /* Dark icon text on colored button */
+  transition: filter 0.1s ease;
+}
+.admin-window-button.close {
+  background-color: #ff5f57;
+} /* Red */
+.admin-window-button.minimize {
+  background-color: #ffbd2e;
+} /* Yellow */
+.admin-window-button.maximize {
+  background-color: #28c940;
+} /* Green */
+
+.admin-window-button:hover {
+  filter: brightness(1.15);
+}
+.admin-window-button:active {
+  filter: brightness(0.85);
+}
+
+#adminTerminalOutput {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px 12px;
+  line-height: 1.45;
+  font-size: 0.95em;
+  word-break: break-all;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--terminal-scrollbar-thumb)
+    var(--terminal-scrollbar-track); /* Firefox */
+}
+#adminTerminalOutput::-webkit-scrollbar {
+  width: 8px;
+}
+#adminTerminalOutput::-webkit-scrollbar-track {
+  background: var(--terminal-scrollbar-track);
+}
+#adminTerminalOutput::-webkit-scrollbar-thumb {
+  background: var(--terminal-scrollbar-thumb);
+  border-radius: 4px;
+}
+#adminTerminalOutput::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-scrollbar-thumb-hover);
+}
+
+#adminTerminalOutput div {
+  margin-bottom: 3px;
+  white-space: pre-wrap;
+}
+#adminTerminalOutput .prompt-user {
+  color: var(--terminal-prompt-user);
+}
+#adminTerminalOutput .prompt-path {
+  color: var(--terminal-prompt-path);
+}
+#adminTerminalOutput .prompt-symbol {
+  color: var(--terminal-prompt-symbol);
+}
+
+#adminTerminalInputContainer {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid var(--terminal-border);
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle difference for input area */
+  flex-shrink: 0;
+}
+#adminTerminalPrompt {
+  color: var(--terminal-prompt-user); /* Default to user color */
+  margin-right: 8px;
+  font-weight: bold;
+}
+#adminTerminalInput {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  color: var(--terminal-text);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  outline: none;
+  padding: 3px 0;
+  caret-color: var(--terminal-caret-color);
+}
+
+#adminTerminalAutocomplete {
+  position: absolute;
+  bottom: calc(
+    35px + 10px
+  ); /* Position above input line (adjust if input container height changes) */
+  left: 10px;
+  right: 10px;
+  background-color: var(--terminal-autocomplete-bg);
+  color: var(--terminal-text);
+  border: 1px solid var(--terminal-autocomplete-border);
+  max-height: 120px;
+  overflow-y: auto;
+  z-index: 1051; /* Above modal content but below other potential popups */
+  border-radius: 4px;
+  display: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+.admin-autocomplete-item {
+  padding: 7px 12px; /* More padding */
+  cursor: pointer;
+  font-size: 0.9em;
+  border-bottom: 1px solid #333; /* Separator for items */
+}
+.admin-autocomplete-item:last-child {
+  border-bottom: none;
+}
+.admin-autocomplete-item:hover,
+.admin-autocomplete-item.selected {
+  background-color: var(--terminal-autocomplete-hover-bg);
+  color: var(--terminal-autocomplete-hover-text);
+}
+
+/* Terminal Themes (Applied to .admin-terminal-modal) */
+.admin-terminal-modal.theme-light .admin-terminal-modal-content,
+.admin-terminal-modal.theme-light #adminTerminal {
+  background-color: #f0f8ff; /* AliceBlue */
+  color: #1e1e1e;
+  border-color: #a0a0a0;
+}
+.admin-terminal-modal.theme-light #adminTerminalToolbar {
+  background-color: #d8e0e8;
+  border-bottom-color: #a0a0a0;
+}
+.admin-terminal-modal.theme-light #adminTerminalModalTitle {
+  color: #1e1e1e;
+}
+.admin-terminal-modal.theme-light #adminTerminalOutput {
+  border-bottom-color: #a0a0a0;
+}
+.admin-terminal-modal.theme-light #adminTerminalInputContainer {
+  background-color: #e8eef3;
+  border-top-color: #a0a0a0;
+}
+.admin-terminal-modal.theme-light #adminTerminalPrompt {
+  color: #0056b3;
+} /* Darker blue */
+.admin-terminal-modal.theme-light #adminTerminalInput {
+  color: #1e1e1e;
+  caret-color: #0056b3;
+}
+.admin-terminal-modal.theme-light #adminTerminalAutocomplete {
+  background-color: #e8f0f8;
+  color: #1e1e1e;
+  border-color: #a0a0a0;
+}
+.admin-terminal-modal.theme-light .admin-autocomplete-item:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.admin-terminal-modal.theme-light ::-webkit-scrollbar-thumb {
+  background: #b0c4de;
+}
+.admin-terminal-modal.theme-light ::-webkit-scrollbar-track {
+  background: #dcdcdc;
+}
+
+.admin-terminal-modal.theme-matrix .admin-terminal-modal-content,
+.admin-terminal-modal.theme-matrix #adminTerminal {
+  background-color: #000000;
+  color: #00ff00; /* Bright green */
+  border-color: #008000; /* Darker green border */
+  font-family: "MatrixCodeNFI", "Courier New", Courier, monospace; /* Requires Matrix font or fallback */
+}
+@font-face {
+  /* Example for Matrix font - you'd need the font file */
+  font-family: "MatrixCodeNFI";
+  src: url("../assets/fonts/matrix_code_nfi.woff2") format("woff2"),
+    /* Adjust path */ url("../assets/fonts/matrix_code_nfi.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.admin-terminal-modal.theme-matrix #adminTerminalToolbar {
+  background-color: #080808;
+  border-bottom-color: #008000;
+}
+.admin-terminal-modal.theme-matrix #adminTerminalModalTitle {
+  color: #00ff00;
+}
+.admin-terminal-modal.theme-matrix #adminTerminalOutput {
+  border-bottom-color: #008000;
+}
+.admin-terminal-modal.theme-matrix #adminTerminalInputContainer {
+  background-color: #050505;
+  border-top-color: #008000;
+}
+.admin-terminal-modal.theme-matrix #adminTerminalPrompt {
+  color: #32cd32;
+} /* LimeGreen */
+.admin-terminal-modal.theme-matrix #adminTerminalInput {
+  color: #00ff00;
+  caret-color: #32cd32;
+}
+.admin-terminal-modal.theme-matrix #adminTerminalAutocomplete {
+  background-color: #080808;
+  color: #00ff00;
+  border-color: #008000;
+}
+.admin-terminal-modal.theme-matrix .admin-autocomplete-item:hover {
+  background-color: #008000;
+  color: #000;
+}
+.admin-terminal-modal.theme-matrix ::-webkit-scrollbar-thumb {
+  background: #008000;
+}
+.admin-terminal-modal.theme-matrix ::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* Blog Post Form */
+.admin-settings-form .form-control-lg {
+  /* For title and slug */
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+}
+.admin-settings-form textarea#content {
+  min-height: 300px; /* Good height for content editor */
+  font-family: var(--body-font);
+  line-height: 1.6;
+}
+.admin-settings-form #featured_image {
+  margin-top: 5px;
+}
+.admin-settings-form .mt-2 img {
+  border: 1px solid var(--std-dash-border-color);
+  padding: 3px;
+  background-color: #fff;
+}
+.admin-settings-form .form-check-toggle label:first-child {
+  /* Label text for toggle */
+  margin-right: 15px; /* Space between label and switch */
+}
+
+/* Blog Post List Table */
+.admin-table.stylish-table td.actions-cell {
+  white-space: nowrap; /* Prevent action buttons from wrapping too much */
+  min-width: 120px;
+}
+.admin-table.stylish-table .btn-xs {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8em;
+  margin: 0 2px; /* Spacing between action buttons */
+}
+.admin-table.stylish-table .btn-xs i {
+  margin-right: 0; /* Icons only for very small buttons */
+}
+.admin-table.stylish-table .status-badge {
+  font-size: 0.75em;
+  padding: 3px 8px;
+  border-radius: 10px;
+  color: #fff;
+  text-transform: capitalize;
+}
+.status-draft {
+  background-color: var(--text-muted, #6c757d);
+}
+.status-published {
+  background-color: var(--success-color, #198754);
+}
+.status-pending_review {
+  background-color: var(--warning-color, #ffc107);
+  color: #000;
+}
+.status-archived {
+  background-color: var(--secondary-color, #1c4a7e);
+}
+
+/* Filter Bar for Blog List */
+.filters-and-search-section .filter-grid {
+  /* General filter grid from manage_users */
+  /* ... existing styles ... */
+}
+.filters-and-search-section .input-group-admin input.form-control {
+  padding-left: 35px; /* Ensure space for icon */
+}
+
+/* QR Scanner Modal Styles (similar to terminal modal, but can be distinct) */
+.qr-scanner-modal-content {
+  /* Specific class for the scanner modal content */
+  background-color: #fdfdfd; /* Lighter background for camera view */
+  color: var(--text-dark);
+  max-width: 550px; /* Optimal for camera view */
+  height: auto; /* Adjust based on content */
+  max-height: 90vh;
+  padding: 0; /* Toolbar and body will handle padding */
+}
+#qrScannerToolbar {
+  /* Shares .admin-terminal-toolbar but can be overridden */
+  background-color: var(--primary-color); /* Theme consistent */
+  color: var(--text-light);
+  border-bottom: 1px solid var(--primary-color-darker); /* Define this variable if needed */
+}
+#qrScannerModalTitle {
+  color: var(--text-light);
+}
+#qrScannerToolbar .admin-window-button.close {
+  /* Ensure close button is visible */
+  color: #fff; /* Or a contrasting color for your theme */
+}
+#qrScannerToolbar .admin-window-button.close:hover {
+  background-color: var(--danger-color); /* Red hover for close */
+  color: #fff;
+}
+
+.qr-scanner-body {
+  padding: 20px;
+  text-align: center;
+}
+#qrScannerVideoContainer {
+  width: 100%;
+  max-width: 400px; /* Limit video preview size */
+  margin: 0 auto 15px auto;
+  border: 2px dashed var(--std-dash-border-color);
+  background-color: #000; /* Black background for video */
+  position: relative; /* For potential overlays or aspect ratio enforcement */
+  min-height: 250px; /* Ensure it has some height */
+}
+#qrScannerVideoPreview {
+  display: block; /* Remove extra space below video */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 300px;
+}
+#qrScannerResult .alert {
+  font-size: 0.95em;
+  padding: 10px 15px;
+}
+.qr-scanner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1.5rem;
+}
+.qr-scanner-actions .cta-button {
+  padding: 10px 20px;
+}
+#qrScannerError {
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+/* Attendance Status Badges in Registrations List */
+.attendance-status-badge {
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+.status-not-arrived {
+  background-color: var(--text-muted, #6c757d);
+}
+.status-checked-in {
+  background-color: var(--success-color, #198754);
+}
+.status-checked-out {
+  background-color: var(--secondary-color, #1c4a7e);
+}
+
+/* Make the specific launcher button more prominent if desired */
+#launchQrScannerButton {
+  /* background-color: var(--success-color); */
+  /* border-color: var(--success-color); */
+  /* color: #fff; */
+}
+#launchQrScannerButton:hover {
+  /* background-color: #157347; */
+}
+
+/* Ensure modal theming from terminal CSS doesn't conflict if classes are shared,
+       or make qr-scanner-modal specific themes */
+.admin-terminal-modal.theme-light .qr-scanner-modal-content {
+  background-color: #f0f8ff;
+  color: #1e1e1e;
+  /* Adjust other light theme elements if necessary for scanner */
+}
+.admin-terminal-modal.theme-matrix .qr-scanner-modal-content {
+  background-color: #000;
+  color: #0f0;
+  /* Adjust other matrix theme elements if necessary for scanner */
+}
+
+/* Styles for admin_dashboard.php if using this CSS file */
+.super-admin-dashboard-container .admin-stats-cards {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* More flexible for more cards */
+  gap: 20px;
+}
+.stat-card {
+  /* Refined stat card */
+  display: flex;
+  flex-direction: row; /* Icon and info side-by-side */
+  align-items: center;
+  text-align: left;
+  padding: 15px;
+  gap: 15px;
+  border-top: none; /* Remove top border */
+  border-left: 4px solid var(--primary-color); /* Accent on left */
+}
+.stat-card .stat-card-icon {
+  font-size: 1.8em; /* Smaller icon */
+  margin-bottom: 0;
+  padding: 12px; /* Smaller padding */
+  width: 50px; /* Smaller circle */
+  height: 50px;
+  flex-shrink: 0;
+}
+.stat-card .stat-card-info {
+  flex-grow: 1;
+}
+.stat-card .stat-card-info h3 {
+  font-size: 0.9em;
+  margin-bottom: 2px;
+}
+.stat-card .stat-card-info p {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+.stat-card .stat-card-link {
+  font-size: 0.8em;
+  margin-top: 5px;
+  align-self: flex-start; /* Align link to the start of its container */
+}
+.stat-card.health-stat .stat-card-info p {
+  font-size: 1.1em;
+}
+.system-health-details {
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+.system-health-details li {
+  margin-bottom: 3px;
+}
+.system-health-details li i {
+  font-size: 0.8em;
+}
+
+.dashboard-columns-layout {
+  /* From previous dashboard update, ensure it's present */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 2.5rem;
+}
+@media (min-width: 992px) {
+  .dashboard-columns-layout {
+    grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
+  } /* Flexible columns */
+}
+.dashboard-main-column-sa,
+.dashboard-sidebar-column-sa {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.card-style-admin .section-title-minor {
+  /* Consistent section titles within cards */
+  font-size: 1.2em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--light-grey);
+}
+.widget-list.compact-list li {
+  font-size: 0.85em;
+  padding: 6px 0;
+}
+.audit-log-snippet .log-details {
+  display: block;
+} /* Simpler layout for snippet */
+.audit-log-snippet .log-action {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.audit-log-snippet .log-user-time {
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+.dashboard-chart-widget .chart-container {
+  width: 100%;
+  height: 280px; /* Adjust as needed */
+  position: relative;
+  background-color: #f9f9f9;
+  border: 1px solid var(--std-dash-border-color);
+  border-radius: 5px;
+}

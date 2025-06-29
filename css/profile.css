@@ -1,0 +1,1039 @@
+/* geetanjali_website/css/style.css (or a dedicated profile.css) */
+
+:root {
+  /* Ensure these variables are defined in your main stylesheet or here */
+  --primary-color: #0a2342;
+  --secondary-color: #1c4a7e; /* A slightly lighter blue for accents */
+  --accent-gold: #c9a46b;
+  --accent-gold-darker: #b08f5a;
+  --text-light: #f8f9fa;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --dashboard-bg: #f4f7fc;
+  --card-bg: #ffffff;
+  --background-offwhite: #fdfbf5;
+  --std-dash-border-color: #dce1e7;
+  --std-dash-shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.06);
+  --std-dash-shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --heading-font: "Playfair Display", serif;
+  --body-font: "Lato", sans-serif;
+  --success-color: #198754;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-grey: #f1f3f5;
+  --input-bg-color: #f9fafb;
+  --input-focus-border-color: var(--accent-gold);
+  --input-focus-shadow-color: rgba(201, 164, 107, 0.35);
+}
+
+.std-profile-container {
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+  background-color: var(--dashboard-bg);
+}
+
+.std-profile-header.page-title-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  color: var(--text-light);
+  padding: 3.5rem 1.5rem;
+  margin-bottom: 3rem;
+  border-radius: 0 0 18px 18px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.std-profile-header h1 {
+  color: var(--text-light);
+  font-size: 2.6em;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+}
+.std-profile-header .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2em;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+.std-profile-header h1 i {
+  margin-right: 18px;
+  color: var(--accent-gold);
+  vertical-align: middle;
+}
+
+.std-profile-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 992px) {
+  .std-profile-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.std-profile-sidebar {
+  flex: 0 0 320px;
+  background-color: var(--card-bg);
+  padding: 25px; /* Slightly reduced padding for a tighter look */
+  border-radius: 12px;
+  box-shadow: var(--std-dash-shadow-md);
+  border: 1px solid var(--std-dash-border-color);
+  position: sticky;
+  top: 20px;
+}
+.profile-user-summary {
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--std-dash-border-color);
+}
+.sidebar-profile-pic {
+  width: 100px; /* Larger sidebar pic */
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-gold);
+  margin-bottom: 15px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.profile-user-summary h3 {
+  font-family: var(--heading-font);
+  font-size: 1.4em;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+.profile-user-summary p {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+.profile-user-summary .sidebar-pronouns {
+  font-style: italic;
+  font-size: 0.85em;
+}
+.sidebar-divider {
+  border: 0;
+  border-top: 1px solid var(--std-dash-border-color);
+  margin: 20px 0;
+}
+
+.profile-nav .profile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  margin-bottom: 8px; /* Tighter spacing */
+  color: #495057; /* Softer dark text */
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease;
+  font-weight: 500;
+  font-size: 1em;
+}
+.profile-nav .profile-nav-link i {
+  margin-right: 15px;
+  width: 22px;
+  text-align: center;
+  color: var(--primary-color);
+  transition: color 0.2s ease, transform 0.15s ease;
+  font-size: 1.1em;
+}
+.profile-nav .profile-nav-link:hover {
+  background-color: var(--accent-gold-darker); /* Darker gold for hover */
+  color: var(--text-light);
+  transform: translateX(3px);
+  box-shadow: 0 2px 8px rgba(176, 143, 90, 0.4);
+}
+.profile-nav .profile-nav-link:hover i {
+  color: var(--text-light);
+}
+.profile-nav .profile-nav-link.active {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(10, 35, 66, 0.25);
+}
+.profile-nav .profile-nav-link.active i {
+  color: var(--accent-gold);
+}
+
+.std-profile-main-content {
+  flex-grow: 1;
+  background-color: var(--card-bg);
+  padding: 35px 40px;
+  border-radius: 12px;
+  box-shadow: var(--std-dash-shadow-md);
+  border: 1px solid var(--std-dash-border-color);
+}
+.profile-section {
+  margin-bottom: 3.5rem;
+  opacity: 0;
+  animation: fadeInSection 0.5s ease-out 0.1s forwards; /* Added delay */
+}
+.profile-section.active-section {
+  /* This class is added by JS, ensure JS adds it correctly to trigger animation if needed */
+}
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-section:last-child {
+  margin-bottom: 0;
+}
+.profile-section .section-title {
+  font-family: var(--heading-font);
+  font-size: 2em;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 3px solid var(--accent-gold);
+  display: inline-block;
+  letter-spacing: 0.6px;
+}
+.profile-section .section-title i {
+  margin-right: 15px;
+  vertical-align: middle;
+}
+.profile-section .subsection-title {
+  font-family: var(--heading-font);
+  font-size: 1.4em;
+  color: var(--secondary-color);
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed var(--std-dash-border-color);
+}
+.profile-section .subsection-title.mini {
+  /* For Account Settings subsections */
+  font-size: 1.2em;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  border-bottom: none;
+}
+.profile-section .subsection-title.mini i {
+  margin-right: 8px;
+  color: var(--accent-gold);
+}
+.profile-section .subsection-title.text-danger {
+  color: var(--danger-color);
+}
+.profile-section .text-danger {
+  color: var(--danger-color);
+}
+
+/* Digital ID Card */
+.digital-id-card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.digital-id-card {
+  width: 100%;
+  max-width: 430px;
+  border: 1px solid var(--std-dash-border-color);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(165deg, #ffffff 0%, #f0f4f8 100%);
+  overflow: hidden;
+  font-family: var(--body-font);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.digital-id-card:hover {
+  transform: translateY(-5px) scale(1.01); /* More subtle hover */
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+.id-card-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--accent-gold) 150%
+  );
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  border-bottom: 5px solid var(--accent-gold);
+  position: relative;
+}
+.id-card-header .id-card-niftem-logo {
+  max-height: 40px;
+  margin-bottom: 10px;
+}
+.id-card-header h3 {
+  margin: 8px 0 4px 0;
+  font-size: 1.25em;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--text-light);
+}
+.id-card-header p {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.9);
+}
+.id-card-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+@media (min-width: 420px) {
+  .id-card-body {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.id-card-photo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  outline: 2px solid var(--accent-gold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+.id-card-details {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+.id-card-details p {
+  margin-bottom: 0.9em;
+  font-size: 0.95em;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+.id-card-details p strong {
+  color: var(--primary-color);
+  min-width: 100px;
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 8px;
+}
+.id-card-qr {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #e9ecef;
+  background-color: rgba(248, 249, 250, 0.7); /* Slightly more opaque */
+}
+.id-card-qr img {
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto 10px auto;
+  border: 1px solid #e0e0e0;
+  padding: 5px;
+  background-color: white;
+  border-radius: 6px; /* Slightly more rounded */
+}
+.id-card-qr p small {
+  font-size: 0.8em;
+  color: #495057;
+}
+
+.id-card-footer {
+  background-color: #dde3ea;
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #c0c8d0;
+}
+.id-card-footer .id-card-geetanjali-logo {
+  max-height: 30px;
+  opacity: 0.9;
+}
+.profile-bio {
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: #333;
+  padding: 10px;
+  background-color: var(--background-offwhite);
+  border-radius: 5px;
+  border-left: 3px solid var(--accent-gold);
+}
+
+/* Profile Form Styling */
+.profile-form fieldset {
+  border: 1px solid var(--std-dash-border-color);
+  padding: 20px 25px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+.profile-form legend {
+  font-family: var(--heading-font);
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding: 0 10px;
+  width: auto; /* Important for legend display */
+}
+.profile-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 30px;
+}
+.profile-form .form-group {
+  margin-bottom: 1.8rem; /* Adjusted spacing */
+  flex-grow: 1;
+  position: relative;
+}
+.profile-form .form-group.col-md-6 {
+  width: calc(50% - 15px);
+  min-width: 230px;
+}
+.profile-form label {
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 0.6rem;
+  color: var(--text-dark); /* Darker label */
+  display: block;
+}
+.profile-form .form-control,
+.profile-form .form-control-file,
+.profile-form select.form-control {
+  /* Added select */
+  width: 100%;
+  padding: 12px 16px; /* Adjusted padding */
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  background-color: var(--input-bg-color);
+}
+.profile-form .form-control:focus,
+.profile-form .form-control-file:focus,
+.profile-form select.form-control:focus {
+  border-color: var(--input-focus-border-color);
+  box-shadow: 0 0 0 0.25rem var(--input-focus-shadow-color);
+  outline: none;
+  background-color: #fff;
+}
+.profile-form .form-control[readonly] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.profile-form .required {
+  color: var(--danger-color);
+  margin-left: 4px;
+  font-weight: normal;
+}
+.profile-form .cta-button {
+  padding: 12px 30px;
+  font-size: 1.05em;
+  letter-spacing: 0.5px;
+  font-weight: 500; /* Slightly less bold for better balance */
+}
+.profile-form .cta-button i {
+  margin-right: 8px;
+}
+.profile-form .cta-button.btn-secondary {
+  /* For less prominent actions */
+  background-color: var(--text-muted);
+  border-color: var(--text-muted);
+}
+.profile-form .cta-button.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
+}
+.profile-form .cta-button.btn-info {
+  background-color: var(--info-color);
+  border-color: var(--info-color);
+  color: #000;
+}
+.profile-form .cta-button.btn-info:hover {
+  background-color: #0baccc;
+  border-color: #0baccc;
+}
+.profile-form .cta-button.btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+.profile-form .cta-button.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.profile-form small.form-text {
+  font-size: 0.9em;
+  color: #5a6268;
+  display: block;
+  margin-top: 0.5rem;
+}
+.profile-form .current-profile-pic-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95em;
+  color: #495057;
+  margin-top: 10px;
+}
+.profile-form .current-profile-pic-display img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-form.compact-form .form-group {
+  margin-bottom: 1.2rem;
+} /* For denser forms like in account settings */
+hr.section-divider {
+  border: 0;
+  border-top: 1px solid var(--std-dash-border-color);
+  margin: 2.5rem 0;
+}
+
+/* Public Profile Page Specific (mostly inherited or slightly tweaked) */
+.public-profile-page-container {
+  background-color: var(--dashboard-bg);
+  padding: 3rem 0;
+}
+.profile-card-public {
+  background-color: #fff;
+  padding: 40px 45px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile-header-public {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  border-bottom: 1px solid var(--std-dash-border-color);
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+}
+@media (min-width: 600px) {
+  .profile-header-public {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+.profile-pic-public {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 7px solid var(--primary-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+.profile-info-public h1 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 0.6em;
+  font-size: 2.6em;
+  letter-spacing: 0.5px;
+}
+.profile-info-public p {
+  margin-bottom: 0.6em;
+  color: #343a40;
+  font-size: 1.15em;
+  line-height: 1.65;
+}
+.public-niftem-id {
+  font-weight: 600;
+}
+.public-department {
+  font-style: italic;
+  color: #5a6268;
+}
+.public-member-since {
+  font-size: 0.95em;
+  color: #5a6268;
+}
+
+.participated-events-public {
+  background-color: var(--background-offwhite);
+  padding: 35px 40px;
+  border-radius: 12px;
+  box-shadow: var(--std-dash-shadow-sm);
+}
+.participated-events-public h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 1.8rem;
+  font-size: 1.8em; /* Consistent title size */
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-gold);
+  display: inline-block;
+}
+.participated-events-public h2 i {
+  margin-right: 18px;
+  color: var(--accent-gold);
+}
+.event-list-public {
+  list-style: none;
+  padding-left: 0;
+}
+.event-list-public li {
+  padding: 18px 12px;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 1.1em;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+}
+.event-list-public li:hover {
+  background-color: #fff;
+  transform: translateX(5px);
+}
+.event-list-public li:last-child {
+  border-bottom: none;
+}
+.event-list-public li strong {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+.event-list-public li .event-date-public {
+  color: #5a6268;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* Form messages */
+.form-message {
+  margin-bottom: 2rem;
+  padding: 18px 22px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  border-left-width: 5px;
+}
+.form-message.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-color: #badbcc;
+  border-left-color: var(--success-color);
+}
+.form-message.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border-color: #f5c2c7;
+  border-left-color: var(--danger-color);
+}
+.form-message.info {
+  background-color: #cff4fc;
+  color: #055160;
+  border-color: #b6effb;
+  border-left-color: var(--info-color);
+}
+.form-message.error ul {
+  margin-top: 0.5rem;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+.form-message.error li {
+  margin-bottom: 0.5rem;
+}
+
+/* Conceptual Sections: Interests/Skills, Social Links, Badges, Activity Stream */
+.profile-section.profile-interests-skills,
+.profile-section.profile-social-links,
+.profile-section.profile-badges-section,
+.profile-section.profile-activity-stream,
+.profile-section.profile-privacy-settings {
+  /* Added privacy settings here */
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--std-dash-border-color);
+}
+.profile-section.profile-privacy-settings .form-group {
+  margin-bottom: 1.5rem;
+} /* Tighter spacing for privacy form */
+
+/* Interests/Skills Tags */
+.profile-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Increased gap */
+  margin-top: 12px;
+}
+.profile-tag {
+  background-color: var(--accent-gold);
+  color: var(--primary-color);
+  padding: 8px 15px; /* More padding */
+  border-radius: 20px;
+  font-size: 0.95em; /* Slightly larger */
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  display: inline-flex; /* For icon alignment */
+  align-items: center;
+}
+.profile-tag:hover {
+  background-color: var(--primary-color);
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+.profile-tag i {
+  margin-right: 6px;
+  font-size: 0.9em;
+}
+.profile-tag.skill-tag {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+}
+.profile-tag.skill-tag:hover {
+  background-color: var(--accent-gold);
+  color: var(--primary-color);
+}
+.profile-tag.skill-tag i {
+  color: var(--text-light);
+}
+.profile-tag.skill-tag:hover i {
+  color: var(--primary-color);
+}
+
+/* Social Media Links Section */
+.profile-social-links-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 15px;
+}
+.profile-social-links-list.view-mode a {
+  /* For display mode */
+  font-size: 1em;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid var(--std-dash-border-color);
+  border-radius: 5px;
+  background-color: var(--light-grey);
+}
+.profile-social-links-list.view-mode a:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border-color: var(--primary-color);
+}
+.profile-social-links-list.view-mode a i {
+  margin-right: 8px;
+  font-size: 1.3em; /* Larger icons for links */
+}
+
+/* Badges/Achievements Section */
+.profile-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(120px, 1fr)
+  ); /* More badges per row */
+  gap: 25px;
+}
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 25px 15px;
+  background-color: var(--light-grey); /* Lighter background for badges */
+  border-radius: 10px;
+  box-shadow: var(--std-dash-shadow-sm);
+  border: 1px solid var(--std-dash-border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.badge-item:hover {
+  transform: translateY(-5px) scale(1.03); /* More noticeable hover */
+  box-shadow: var(--std-dash-shadow-md);
+}
+.badge-item i {
+  font-size: 3.5em; /* Larger badge icons */
+  color: var(--accent-gold);
+  margin-bottom: 15px; /* More space */
+  line-height: 1; /* Ensure icon is centered if it has descenders */
+}
+.badge-item span.badge-title {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin-bottom: 5px; /* Space before date */
+}
+.badge-item small.badge-date {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+/* Profile Activity Stream */
+.profile-activity-list {
+  /* Renamed for consistency */
+  margin-top: 1rem;
+}
+.profile-activity-item {
+  display: flex;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e9ecef; /* Lighter border */
+  align-items: flex-start;
+}
+.profile-activity-item:last-child {
+  border-bottom: none;
+}
+.profile-activity-item i.activity-icon {
+  color: var(--secondary-color); /* Use secondary color for icons */
+  margin-top: 5px;
+  font-size: 1.3em;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+.profile-activity-content p {
+  margin-bottom: 0.3em;
+  font-size: 1em;
+  line-height: 1.55;
+  color: #343a40;
+}
+.profile-activity-content p strong {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.profile-activity-content small.activity-timestamp {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Account Settings Subsections */
+.account-settings-subsection {
+  padding: 1.5rem 0;
+  border-bottom: 1px dashed var(--std-dash-border-color);
+}
+.account-settings-subsection:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.account-settings-subsection p {
+  font-size: 0.95em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* public */
+/* In css/style.css or student_profile_css */
+
+.profile-search-section .search-card {
+  background-color: var(--card-bg);
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: var(--std-dash-shadow-md);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.profile-search-section .search-card h2 {
+  font-size: 1.8em;
+}
+.profile-search-form .form-control-lg {
+  font-size: 1.15em; /* Make search input a bit larger */
+  padding: 0.8rem 1.2rem;
+}
+.profile-search-form .search-button-public {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 1.1em;
+}
+.search-message-area .form-message {
+  /* Ensure messages in search area are styled */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-card-public {
+  position: relative; /* For potential background pseudo-element */
+}
+/* Optional: if you want a pseudo-element for background styling */
+/* .profile-card-public-bg { ... } */
+
+.profile-header-public .public-pronouns {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95em;
+  margin-top: -0.3em; /* Adjust spacing below name */
+  margin-bottom: 0.5em;
+}
+.profile-info-public p i {
+  /* Icons next to NIFTEM ID, Dept etc. */
+  margin-right: 8px;
+  color: var(--primary-color);
+  opacity: 0.7;
+  width: 20px; /* For alignment */
+}
+
+.profile-bio-public h3 {
+  /* For "About [Name]" */
+  font-size: 1.4em;
+  color: var(--secondary-color);
+  margin-bottom: 0.8em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px dashed var(--std-dash-border-color);
+}
+.profile-bio-public h3 i {
+  margin-right: 10px;
+}
+
+.card-style-public {
+  /* Common style for main content cards */
+  background-color: var(--card-bg);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: var(--std-dash-shadow-sm);
+  margin-bottom: 2rem;
+}
+.public-profile-sidebar-col .card-style-public {
+  /* Sidebar cards can have slightly different bg */
+  background-color: var(--background-offwhite);
+}
+
+/* Public Achievements/Badges */
+.profile-badges-public h2 {
+  /* Re-using participated-events h2 style */
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.6em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-gold);
+  display: inline-block;
+}
+.profile-badges-public h2 i {
+  margin-right: 12px;
+  color: var(--accent-gold);
+}
+
+.profile-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+.badge-item-public {
+  background-color: var(--light-grey);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--std-dash-border-color);
+}
+.badge-icon-public {
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 10px;
+}
+.badge-title-public {
+  font-weight: 600;
+  color: var(--text-dark);
+  display: block;
+  font-size: 0.95em;
+  margin-bottom: 5px;
+}
+.badge-description-public {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+/* Social Links in Sidebar */
+.profile-social-public .profile-social-links-list.view-mode a {
+  padding: 10px 15px; /* Larger clickable area */
+  font-size: 0.95em;
+  margin-bottom: 8px; /* Spacing between links */
+}
+.profile-social-public .profile-social-links-list.view-mode a.linkedin {
+  border-left: 3px solid #0077b5;
+}
+.profile-social-public .profile-social-links-list.view-mode a.twitter {
+  border-left: 3px solid #1da1f2;
+}
+.profile-social-public .profile-social-links-list.view-mode a.portfolio {
+  border-left: 3px solid #6c757d;
+}
+
+/* verify */
+/* In css/style.css or admin_style.css */
+
+.admin-table.verify-users-table th:nth-child(3), /* Targeting "Name & Verification" header */
+.admin-table.verify-users-table td.user-name-cell {
+  min-width: 200px; /* Give more space for name and badge */
+}
+
+.user-name-cell .user-name-wrapper {
+  display: flex; /* Align name and badge horizontally */
+  align-items: center; /* Vertically align items in the middle */
+  gap: 6px; /* Space between the name and the badge */
+}
+
+.verified-badge-icon {
+  width: 75px; /* Reduced from a typical 16px; 16px * 0.6 = ~10px */
+  height: 50px; /* Reduced from a typical 16px */
+  margin-left: 4px;
+  vertical-align: middle; /* Align with text */
+}
+
+.admin-table .status-verified {
+  color: var(--success-color, #198754);
+  font-weight: bold;
+}
+.admin-table .status-not-verified {
+  color: var(--text-muted, #6c757d);
+}
+.admin-table .status-verified i,
+.admin-table .status-not-verified i {
+  margin-right: 4px;
+}
+
+/* Button color classes if not already defined by a framework */
+.btn-success {
+  background-color: var(--success-color, #198754);
+  color: white;
+  border-color: var(--success-color, #198754);
+}
+.btn-success:hover {
+  background-color: #157347; /* Darker green */
+  border-color: #146c43;
+}
+.btn-warning {
+  background-color: var(--warning-color, #ffc107);
+  color: #000;
+  border-color: var(--warning-color, #ffc107);
+}
+.btn-warning:hover {
+  background-color: #ffba00; /* Darker yellow */
+  border-color: #ffb300;
+}
+.btn.btn-small {
+  /* Ensure this is styled if not already */
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8em;
+}
+.btn.btn-small i {
+  margin-right: 4px;
+}
+.admin-table .inline-form button[disabled] {
+  background-color: #adb5bd;
+  border-color: #adb5bd;
+  cursor: not-allowed;
+  opacity: 0.65;
+}

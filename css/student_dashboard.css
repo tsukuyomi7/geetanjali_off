@@ -1,0 +1,580 @@
+/* geetanjali_website/css/style.css (or a dedicated student_dashboard.css) */
+
+:root {
+  --dashboard-bg: #f8f9fa; /* Slightly lighter than previous for a cleaner look */
+  --card-bg: #ffffff;
+  --widget-title-color: var(--primary-color);
+  --metric-value-color: var(--primary-color);
+  --metric-label-color: #495057; /* Darker grey for better readability */
+  --action-button-bg: #ffffff; /* White background for action buttons */
+  --action-button-hover-bg: #f1f3f5; /* Slightly darker hover for action buttons */
+  --sidebar-widget-bg: #ffffff;
+  --std-dash-border-color: #dee2e6; /* Consistent border color */
+  --std-dash-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --std-dash-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.std-dash-container {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  background-color: var(--dashboard-bg);
+  min-height: calc(
+    100vh - 120px
+  ); /* Adjust based on actual header/footer height */
+}
+
+/* Dashboard Header */
+.std-dash-header {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    #163252 100%
+  ); /* Slightly adjusted gradient */
+  color: var(--text-light);
+  border-radius: 10px; /* Consistent rounding */
+  margin-bottom: 2.5rem; /* More space below header */
+  box-shadow: var(--std-dash-shadow-md);
+}
+.std-dash-user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 1rem; /* Add margin for when actions wrap below */
+}
+@media (min-width: 768px) {
+  .std-dash-user-info {
+    margin-bottom: 0;
+  }
+}
+.std-dash-profile-pic {
+  width: 65px; /* Slightly larger */
+  height: 65px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-gold);
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.std-dash-greeting {
+  font-family: var(--heading-font);
+  font-size: 2em;
+  margin: 0 0 0.1em 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.std-dash-subtitle {
+  font-size: 1.05em;
+  opacity: 0.9;
+  margin: 0;
+}
+.std-dash-header-actions .btn {
+  /* Assuming a base .btn class */
+  color: var(--text-light);
+  border-color: var(--accent-gold);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9em;
+  font-weight: 500;
+  border-width: 2px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.std-dash-header-actions .btn:hover {
+  background-color: var(--accent-gold);
+  color: var(--primary-color);
+}
+.std-dash-header-actions .btn i {
+  margin-right: 6px;
+}
+
+/* Profile Completion Widget */
+.std-dash-profile-widget .widget-card {
+  /* Reusing widget-card structure */
+  background-color: var(--card-bg);
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: var(--std-dash-shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-left: 5px solid #007bff; /* Blue accent for info */
+}
+.std-dash-profile-widget .widget-icon i {
+  font-size: 2em; /* Larger icon */
+  color: #007bff;
+}
+.std-dash-profile-widget .widget-content {
+  flex-grow: 1;
+}
+.std-dash-profile-widget .widget-content h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.15em; /* Slightly larger title */
+  color: var(--text-dark);
+  font-weight: 600;
+}
+.std-dash-profile-widget .progress-bar-container-widget {
+  width: 100%;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  height: 12px;
+  margin-bottom: 10px;
+}
+.std-dash-profile-widget .progress-bar-widget {
+  background-color: #007bff;
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.6s ease-in-out;
+  display: flex; /* For text inside */
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+.std-dash-profile-widget .widget-content p {
+  margin-bottom: 0;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.std-dash-profile-widget .alert-link.strong-link {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Key Metrics Grid */
+.std-dash-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(240px, 1fr)
+  ); /* Adjust minmax for card width */
+  gap: 25px; /* Consistent gap */
+  margin-bottom: 2.5rem;
+}
+.std-dash-metric-card {
+  background-color: var(--card-bg);
+  padding: 25px; /* Increased padding */
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--std-dash-shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 200px; /* Increased min-height */
+  border-top: 4px solid transparent; /* For accent color */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.std-dash-metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+/* Accent colors for metric cards */
+.std-dash-metric-card.upcoming-events {
+  border-top-color: var(--accent-gold);
+}
+.std-dash-metric-card.certificates-earned {
+  border-top-color: #28a745;
+}
+.std-dash-metric-card.my-id-card {
+  border-top-color: #17a2b8;
+}
+.std-dash-metric-card.past-events {
+  border-top-color: #6c757d;
+}
+
+.std-dash-metric-card .metric-icon i {
+  font-size: 2.8em;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+.std-dash-metric-card.upcoming-events .metric-icon i {
+  color: var(--accent-gold);
+}
+.std-dash-metric-card.certificates-earned .metric-icon i {
+  color: #28a745;
+}
+.std-dash-metric-card.my-id-card .metric-icon i {
+  color: #17a2b8;
+}
+.std-dash-metric-card.past-events .metric-icon i {
+  color: #6c757d;
+}
+
+.std-dash-metric-card .metric-value {
+  font-size: 2.8em; /* Larger value */
+  font-weight: 700;
+  color: var(--metric-value-color);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.std-dash-metric-card .metric-label {
+  font-size: 1em; /* Clearer label */
+  color: var(--metric-label-color);
+  margin-bottom: 18px;
+  min-height: 2.2em; /* Ensure space for two lines if needed */
+  font-weight: 500;
+}
+.std-dash-metric-card .metric-card-link {
+  font-size: 0.95em; /* Slightly larger link text */
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600; /* Bolder link */
+  padding: 10px 0;
+  width: 100%;
+  border-top: 1px solid var(--std-dash-border-color);
+  margin-top: auto;
+  transition: color 0.2s ease;
+}
+.std-dash-metric-card .metric-card-link:hover {
+  color: var(--accent-gold);
+}
+.std-dash-metric-card .metric-card-link i {
+  margin-left: 6px;
+  font-size: 0.9em;
+}
+
+/* Dashboard Columns Layout */
+.std-dash-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px; /* Consistent gap */
+}
+@media (min-width: 992px) {
+  .std-dash-columns {
+    grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
+  }
+}
+
+.std-dash-main-col .dashboard-section, /* Use generic .dashboard-section */
+    .std-dash-sidebar-col .std-dash-sidebar-widget {
+  /* Unique class for sidebar widgets */
+  margin-bottom: 2.5rem; /* More spacing */
+}
+.std-dash-widget-title {
+  font-family: var(--heading-font);
+  font-size: 1.5em; /* Larger widget titles */
+  color: var(--widget-title-color);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--accent-gold);
+  display: inline-block;
+}
+.std-dash-sidebar-widget .std-dash-widget-title i {
+  margin-right: 10px;
+} /* Icon spacing for sidebar titles */
+
+/* Quick Actions Widget */
+.std-dash-quick-actions .quick-actions-grid {
+  /* Grid already defined */
+  gap: 20px; /* Slightly larger gap */
+}
+.std-dash-quick-actions .action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 15px; /* More padding */
+  background-color: var(--action-button-bg);
+  border: 1px solid var(--std-dash-border-color);
+  border-radius: 10px; /* Consistent rounding */
+  text-decoration: none;
+  color: var(--text-dark);
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+  min-height: 130px; /* Increased height */
+  box-shadow: var(--std-dash-shadow-sm);
+}
+.std-dash-quick-actions .action-button:hover {
+  background-color: var(--action-button-hover-bg);
+  transform: translateY(-4px); /* More pronounced hover lift */
+  box-shadow: var(--std-dash-shadow-md);
+}
+.std-dash-quick-actions .action-button i {
+  font-size: 2.2em; /* Larger icons */
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+.std-dash-quick-actions .action-button:hover i {
+  color: var(--accent-gold);
+}
+.std-dash-quick-actions .action-button span {
+  font-size: 1em; /* Clearer text */
+  font-weight: 500;
+}
+
+/* Activity Feed Widget */
+.std-dash-activity-feed .activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 0; /* More vertical padding */
+  border-bottom: 1px dashed var(--std-dash-border-color);
+}
+.std-dash-activity-feed .activity-item:last-child {
+  border-bottom: none;
+}
+.std-dash-activity-feed .activity-icon {
+  font-size: 1.4em; /* Larger activity icons */
+  color: var(--accent-grey);
+  margin-top: 4px;
+  width: 30px; /* Ensure alignment */
+  text-align: center;
+  flex-shrink: 0;
+}
+.std-dash-activity-feed .activity-item strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+.std-dash-activity-feed .activity-item .activity-link {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.std-dash-activity-feed .activity-item .activity-link:hover {
+  text-decoration: underline;
+  color: var(--accent-gold);
+}
+
+/* Sidebar Widgets (Announcements, Deadlines) */
+.std-dash-sidebar-col .std-dash-sidebar-widget {
+  background-color: var(--sidebar-widget-bg);
+  padding: 25px; /* More padding */
+  border-radius: 10px;
+  box-shadow: var(--std-dash-shadow-sm);
+}
+.std-dash-sidebar-widget .sidebar-list {
+  list-style: none;
+  padding-left: 0;
+}
+.std-dash-sidebar-widget .sidebar-list li {
+  padding: 12px 0; /* More padding */
+  border-bottom: 1px solid #f0f0f0;
+}
+.std-dash-sidebar-widget .sidebar-list li:last-child {
+  border-bottom: none;
+}
+.std-dash-sidebar-widget .sidebar-list li strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.05em;
+  color: var(--text-dark);
+}
+.std-dash-sidebar-widget .sidebar-list li p {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 5px;
+  line-height: 1.6;
+}
+.std-dash-sidebar-widget .sidebar-list li small.text-muted {
+  font-size: 0.85em;
+  color: #777;
+}
+.std-dash-sidebar-widget .sidebar-list li a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.std-dash-sidebar-widget .sidebar-list li a:hover {
+  color: var(--accent-gold);
+}
+.std-dash-sidebar-widget .deadline-date-sidebar {
+  font-weight: bold;
+  color: #c0392b;
+  font-size: 0.9em;
+}
+
+/* General container and section padding (ensure these are sensible defaults) */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+} /* Max width for dashboard */
+.content-section {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.content-section.no-padding-top {
+  padding-top: 0;
+}
+.alt-background {
+  background-color: #f0f3f5;
+  padding: 2.5rem 0;
+} /* Slightly different alt background */
+
+/* Ensure base .btn styles are defined if .btn-primary-outline is used */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
+
+/* In css/style.css or student_dashboard_reworked.css */
+
+/* Dashboard Header Quote */
+.std-dash-header-quote {
+  text-align: right;
+  font-style: italic;
+  font-size: 0.9em;
+  max-width: 300px; /* Limit width */
+  opacity: 0.8;
+  padding-left: 20px; /* Space from user info if they stack */
+}
+.std-dash-header-quote i {
+  font-size: 0.8em;
+  margin-right: 3px;
+  vertical-align: top;
+}
+.std-dash-header-quote p {
+  margin-bottom: 2px;
+  display: inline; /* Keep quote on one line if possible */
+}
+.std-dash-header-quote cite {
+  display: block;
+  font-size: 0.9em;
+  text-align: right;
+}
+@media (max-width: 991px) {
+  /* Adjust breakpoint as needed */
+  .std-dash-header-quote {
+    text-align: left;
+    margin-top: 10px;
+    max-width: 100%;
+    padding-left: 0;
+  }
+  .std-dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .std-dash-header-actions {
+    margin-top: 15px;
+  }
+}
+
+/* Recent Submissions Widget */
+.std-dash-sidebar-widget.recent-submissions-widget .sidebar-list li p {
+  font-size: 0.9em;
+  margin-bottom: 2px;
+}
+.submission-status {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 0.75em;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.status-approved {
+  background-color: #28a745;
+} /* Green */
+.status-pending-review {
+  background-color: #ffc107;
+  color: #333;
+} /* Yellow */
+.status-rejected {
+  background-color: #dc3545;
+} /* Red */
+.status-needs-revision {
+  background-color: #fd7e14;
+} /* Orange */
+
+.widget-view-all-link {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.widget-view-all-link:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+.widget-view-all-link i {
+  margin-left: 3px;
+}
+
+/* Activity Feed Enhancements */
+.std-dash-activity-feed .activity-item {
+  /* Existing styles are good */
+  border-left: 3px solid transparent; /* Prepare for type-specific borders */
+  padding: 15px;
+  background-color: #fff; /* If on alt-background, give items a white bg */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: var(--std-dash-shadow-sm);
+}
+.std-dash-activity-feed .activity-item.event-reminder-feed {
+  border-left-color: var(--accent-gold);
+}
+.std-dash-activity-feed .activity-item.certificate-feed {
+  border-left-color: #28a745;
+}
+.std-dash-activity-feed .activity-item.general-feed {
+  border-left-color: #17a2b8;
+}
+.std-dash-activity-feed .activity-item.user-comment-feed {
+  border-left-color: var(--primary-color);
+}
+
+.std-dash-activity-feed .activity-text-content {
+  flex-grow: 1;
+}
+.std-dash-activity-feed .activity-text-content strong {
+  display: block; /* Ensure strong tag takes its own line if needed */
+  margin-bottom: 3px;
+}
+.std-dash-activity-feed .compact-activity-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+.std-dash-activity-feed .compact-activity-list li {
+  padding-left: 0;
+  border-bottom: none;
+  margin-bottom: 3px;
+}
+.std-dash-activity-feed .activity-item.no-activity {
+  border-left-color: var(--accent-grey);
+}
+
+/* Dynamic Quick Action Example (if you implement it) */
+.action-button.submit-work-action {
+  background-color: var(--accent-gold); /* Make it stand out */
+  color: var(--primary-color);
+}
+.action-button.submit-work-action:hover {
+  background-color: #e0ac69; /* Darker gold */
+}
+.action-button.submit-work-action i {
+  color: var(--primary-color);
+}
+
+/* std */

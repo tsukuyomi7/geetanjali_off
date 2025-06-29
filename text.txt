@@ -1,0 +1,8 @@
+id : superadmin
+mail: superadmin@niftem.ac.in
+pass : password123
+
+
+when i try to login through superadmin it says Invalid NIFTEM ID/Email or password.
+
+uploads/profile/vinny.png

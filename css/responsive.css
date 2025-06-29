@@ -1,0 +1,83 @@
+/* Responsive adjustments */
+
+/* For screens smaller than 768px (e.g., tablets, mobile) */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 10px 0;
+  }
+
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .main-nav ul li {
+    margin: 5px 0;
+  }
+
+  .main-nav ul li a {
+    display: block;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 0;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card .actions {
+    margin-top: 10px;
+    margin-left: 0; /* Align actions to the left on small screens */
+    width: 100%;
+    justify-content: space-around; /* Distribute buttons */
+  }
+
+  form {
+    width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .id-card {
+    width: 90%;
+  }
+}
+
+/* For screens smaller than 480px (e.g., smaller mobile phones) */
+@media (max-width: 480px) {
+  header .logo a {
+    font-size: 1.5rem;
+  }
+
+  .main-nav ul li {
+    margin: 3px 0;
+  }
+
+  .dashboard-card h3 {
+    font-size: 1.2em;
+  }
+
+  .dashboard-card .count {
+    font-size: 2em;
+  }
+
+  .card h3 {
+    font-size: 1.1em;
+  }
+  .card p {
+    font-size: 0.85em;
+  }
+}
